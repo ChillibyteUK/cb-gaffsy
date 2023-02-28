@@ -1,0 +1,101 @@
+
+#wrapper-navbar {
+    background-color: white;
+    .nav-top {
+        display: grid !important;
+        grid-template-columns: repeat(2,minmax(0, 1fr));
+        @media (min-width:768px) {
+            grid-template-columns: repeat(3,minmax(0, 1fr));
+        }
+        grid-auto-flow: column;
+    }
+    .navbar-toggler i {
+        color: var(--col-primary);
+    }
+
+    .navbar {
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        .collapsing {
+            transition: none;
+            display: none;
+        }
+
+        .nav-item {
+            .btn {
+                display: block;
+                color: black;
+            }
+            &.current_page_item  {
+                a {
+                    color: var(--col-highlight);
+                }
+            }
+        }
+
+        background-color: var(--col-primary);
+        a {
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.778rem;
+            font-weight: 500;
+            &:hover {
+                color: var(--col-highlight);
+            }
+        }
+        #navbar {
+            @media (max-width:767px) {
+                height: calc(100vh - var(--h-top));
+                .navbar-nav {
+                    height: 100%;
+                }
+                a {
+                    font-size: 1.2rem;
+                    padding: 1rem 0;
+                }
+            }
+        }
+    }
+    .logo {
+        background-image: url(../img/gaffsy-logo.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        aspect-ratio: 3 / 1;
+        height: 50px;
+        max-width: 100%;
+        transition: all 0.2s ease;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .nav-top__phone {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: black;
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+        font-size: 0.889rem;
+        i {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+            @media (min-width:992px) {
+                font-size: 1rem;
+                margin-right: 0.25rem;
+            }
+            line-height: 1;
+            color: var(--col-highlight);
+        }
+        span {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        transition: 0.2s ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
