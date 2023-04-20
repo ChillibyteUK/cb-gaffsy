@@ -23779,6 +23779,15 @@ a.anchor {
   font-style: italic;
 }
 
+:not(.share-icons, .social-icons, figure, .cb, .rplg-biz-name) > a[target=_blank]:not(.btn)::after {
+  font-weight: 600;
+}
+
+.colophon a {
+  color: white;
+  text-decoration: none;
+}
+
 /*
 var all = document.getElementsByTagName("*"), i = 0, rect, docWidth = document.documentElement.offsetWidth;
 for (; i < all.length; i++) {

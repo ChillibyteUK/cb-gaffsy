@@ -73,6 +73,14 @@ a.anchor {
     font-style: italic;
 }
 
+:not(.share-icons,.social-icons,figure,.cb,.rplg-biz-name) > a[target="_blank"]:not(.btn)::after {
+    font-weight: 600;
+}
+.colophon a {
+	color: white;
+	text-decoration: none;
+}
+
 // show stuff that overflows horizontally
 // * {
 //     outline: 1px solid #f00 !important;
