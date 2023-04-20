@@ -117,52 +117,43 @@ wp_head();
     <?php
 do_action('wp_body_open');
 ?>
-    <div id="wrapper-navbar" class="fixed-top p-0">
-        <div class="container-xl pt-3 pb-2 nav-top">
-            <div class="text-start d-none d-md-flex">
-                <a href="<?=parse_phone(get_field('contact_phone','options'))?>" class="nav-top__phone">
-                    <div><i class="fas fa-phone-alt"></i></div>
-                    <div>Call Today <br class="d-lg-none"><span><?=get_field('contact_phone','options')?></span></div>
-                </a>
-            </div>
-            <div class="text-start text-md-center"><a href="/" class="logo" aria-label="Gaffsy Homepage"></a></div>
-            <div class="d-flex justify-content-end align-items-center">
-                <a href="/get-offer/" class="d-none d-md-inline btn btn--accent">Get a Free Cash Offer</a>
-                <button class="d-md-none navbar-toggler text-end mt-2" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
+<div id="wrapper-navbar" class="fixed-top p-0">
+    <nav class="navbar navbar-expand-lg p-0">
+        <div class="container-xl pt-3 pb-2 nav-top align-items-center">
+            <div class="text-lg-center logo-container"><a href="/" class="logo" aria-label="Gaffsy Homepage"></a></div>
+            <div class="button-container d-lg-none">
+                <button class="navbar-toggler mt-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
                 </button>
             </div>
-        </div>
-        <nav class="navbar navbar-expand-md p-0">
-
-            <div class="container-xl">
-                <div class="collapse navbar-collapse" id="navbar">
+            <div class="d-none d-xl-flex phone-container">
+                <a href="<?=parse_phone(get_field('contact_phone','options'))?>" class="nav-top__phone">
+                    <div><i class="fas fa-phone-alt"></i></div>
+                    <div><?=get_field('contact_phone','options')?></span></div>
+                </a>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbar">
                     <?php
                     wp_nav_menu(
     array(
-                            'theme_location'  => 'primary_nav',
-                            'container_class' => 'w-100',
-                            // 'container_id'    => 'primaryNav',
-                            'menu_class'      => 'navbar-nav justify-content-around justify-content-md-between w-100',
-                            'fallback_cb'     => '',
-                            'menu_id'         => 'navbar',
-                            'depth'           => 3,
-                            'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-                        )
+        'theme_location'  => 'primary_nav',
+        'container_class' => 'w-100',
+        // 'container_id'    => 'primaryNav',
+        'menu_class'      => 'navbar-nav justify-content-around w-100',
+        'fallback_cb'     => '',
+        'menu_id'         => 'navbar',
+        'depth'           => 3,
+        'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+    )
 );
 ?>
-                    <!-- ul class="navbar-nav justify-content-around justify-content-md-between w-100">
-                        <li class="nav-item"><a href="" class="nav-link">How it Works</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Cash House Buyers</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">We Buy Any House</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Guides</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">About Us</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
-                        <li class="nav-item d-md-none"><a href="" class="btn btn--accent">Get a Free Cash Offer</a></li>
-                    </ul -->
-                </div>
             </div>
-        </nav>
-    </div>
+            <div class="d-flex justify-content-end align-items-center cta-container">
+                <a href="/get-offer/" class="d-none d-lg-inline btn btn--accent">Free Cash Offer</a>
+            </div>
+        </div>
+    </nav>
+</div>

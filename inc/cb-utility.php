@@ -370,3 +370,53 @@ function remove_comments(){
     $wp_admin_bar->remove_menu('comments');
 }
 add_action( 'wp_before_admin_bar_render', 'remove_comments' );
+
+
+function estimate_reading_time_in_minutes ( $content = '', $words_per_minute = 300, $with_gutenberg = false, $formatted = false ) {
+    // In case if content is build with gutenberg parse blocks
+    if ( $with_gutenberg ) {
+        $blocks = parse_blocks( $content );
+        $contentHtml = '';
+
+        foreach ( $blocks as $block ) {
+            $contentHtml .= render_block( $block );
+        }
+
+        $content = $contentHtml;
+    }
+            
+    // Remove HTML tags from string
+    $content = wp_strip_all_tags( $content );
+            
+    // When content is empty return 0
+    if ( !$content ) {
+        return 0;
+    }
+            
+    // Count words containing string
+    $words_count = str_word_count( $content );
+            
+    // Calculate time for read all words and round
+    $minutes = ceil( $words_count / $words_per_minute );
+    
+    if ( $formatted ) {
+        $minutes = '<p class="reading">Estimated reading time ' . $minutes . ' ' . pluralise($minutes, 'minute') . '</p>';
+    }
+
+    return $minutes;
+}
+
+function pluralise($quantity, $singular, $plural=null) {
+    if($quantity==1 || !strlen($singular)) return $singular;
+    if($plural!==null) return $plural;
+
+    $last_letter = strtolower($singular[strlen($singular)-1]);
+    switch($last_letter) {
+        case 'y':
+            return substr($singular,0,-1).'ies';
+        case 's':
+            return $singular.'es';
+        default:
+            return $singular.'s';
+    }
+}

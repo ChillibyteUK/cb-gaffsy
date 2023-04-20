@@ -45,6 +45,7 @@ get_header();
                             <div class="featured__content">
                                 <?=wp_trim_words(get_the_content(null, false, get_the_ID()),40)?>
                             </div>
+                            <div class="fs-7 pb-2 text-end fst-italic"><?=estimate_reading_time_in_minutes( get_the_content(), 200, true, false )?> minute read</div>
                             <div class="featured__more">Read More</div>
                         </div>
                     </div>
@@ -78,9 +79,10 @@ foreach ($allcats as $cat) {
         <div class="col-md-6 col-xl-3">
             <a class="blog_card" href="<?=get_the_permalink()?>">
                 <img src="<?=get_the_post_thumbnail_url(get_the_ID(),'large')?>" alt="" class="blog_card__image">
-                <div class="blog_card__content">
+                <div class="blog_card__content pb-0" style="min-height:3.7rem">
                     <h3 class="blog_card__title"><?=get_the_title()?></h3>
                 </div>
+                <div class="fs-7 has-primary-color px-2 pb-2"><?=estimate_reading_time_in_minutes( get_the_content(), 200, true, false )?> minute read</div>
             </a>
         </div>
         <?php

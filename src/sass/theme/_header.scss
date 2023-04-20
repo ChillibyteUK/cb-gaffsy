@@ -1,16 +1,8 @@
 
 #wrapper-navbar {
-    background-color: white;
-    .nav-top {
-        display: grid !important;
-        grid-template-columns: repeat(2,minmax(0, 1fr));
-        @media (min-width:768px) {
-            grid-template-columns: repeat(3,minmax(0, 1fr));
-        }
-        grid-auto-flow: column;
-    }
+
     .navbar-toggler i {
-        color: var(--col-primary);
+        color: #fff;
     }
 
     .navbar {
@@ -33,17 +25,20 @@
         }
 
         background-color: var(--col-primary);
-        a {
+        a:not(.btn--accent) {
             color: white;
-            text-transform: uppercase;
             text-decoration: none;
-            font-size: 0.778rem;
+            font-size: 1rem;
             font-weight: 500;
             &:hover {
                 color: var(--col-highlight);
             }
         }
+        
         #navbar {
+            a {
+                padding-top: 0;
+            }
             @media (max-width:767px) {
                 height: calc(100vh - var(--h-top));
                 .navbar-nav {
@@ -56,14 +51,19 @@
             }
         }
     }
+    .logo-container {
+        max-width: 180px;
+        margin-right: 1rem;
+    }
     .logo {
-        background-image: url(../img/gaffsy-logo.svg);
+        background-image: url(../img/gaffsy-logo--wo.svg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         display: inline-block;
         aspect-ratio: 3 / 1;
         height: 50px;
+        width: 150px;
         max-width: 100%;
         transition: all 0.2s ease;
         &:hover {
@@ -71,10 +71,40 @@
         }
     }
 
+    @media (min-width:992px) {
+        .phone-container {
+            margin-top: -0.3rem;
+        }        
+        .cta-container {
+            margin-top: -0.5rem;
+        }
+    }
+
+.navPhone {
+    i {
+        font-size: 1.4rem;
+    }
+    div {
+        font-size: 0.776rem;
+        line-height: 1.1;
+        span {
+            font-size: 1rem;
+        }
+    }
+}
+
+    .button-container {
+        flex-grow: 1;
+        justify-content: end;
+        display: flex;
+        align-items: flex-end;
+        margin-top: -1rem;
+    }
+
     .nav-top__phone {
         text-decoration: none;
         text-transform: uppercase;
-        color: black;
+        color: black !important;
         display: flex;
         align-items: center;
         font-weight: 300;
@@ -96,6 +126,15 @@
         transition: 0.2s ease;
         &:hover {
             opacity: 0.8;
+        }
+    }
+
+    .dropdown-menu {
+        a {
+            color: var(--col-primary) !important;
+            &:active {
+                color: var(--col-highlight) !important;
+            }
         }
     }
 }

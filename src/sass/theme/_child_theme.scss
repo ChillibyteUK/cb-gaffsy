@@ -57,6 +57,7 @@ a.anchor {
 :not(.share-icons,.social-icons,figure,.cb,.rplg-biz-name) > a[target="_blank"]:not(.btn)::after {
     content: "\f08e";
     font-family: "Font Awesome 6 Free";
+    font-weight: 600;
     margin-left: 0.5rem;
     display: inline-block;
 }
@@ -66,6 +67,11 @@ a.anchor {
     font-size: 0.889rem;
 }
 
+
+.reading {
+    font-size: 0.889rem;
+    font-style: italic;
+}
 
 // show stuff that overflows horizontally
 // * {

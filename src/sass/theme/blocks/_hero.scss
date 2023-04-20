@@ -3,10 +3,7 @@ header.hero {
     z-index: 0;
     margin-bottom: 3rem;
 
-    padding-top: var(--h-top);
-    @media (min-width:768px) {
-        padding-top: 130px;
-    }
+    padding-top: 100px;
 
     h1 {
         font-size: 2rem;
@@ -18,6 +15,7 @@ header.hero {
             font-weight: 700;
             color: var(--col-primary);
         }
+
     }
 
     .form-container {
@@ -43,16 +41,36 @@ header.hero {
         @media (min-width:992px) {
             height: 250px;
         }
+        clip-path: polygon(50% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        clip-path: polygon(50% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
+        // janky iOS fix for background image
+        @supports (-webkit-touch-callout: none) {
+            background-attachment: initial;
+        }
     }
 
     .bullets {
         font-weight: 300;
         font-size: 1.1rem;
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+        li {
+            padding-left: 1em;
+            text-indent: -1em;
+            &::before {
+                content: "\f00c";
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 600;
+                font-size: 1.4rem;
+                line-height: 1;
+                padding-right: 5px;
+                color: var(--col-highlight);
+            }
+        }
         span {
             color: var(--col-primary);
             font-weight: 700;
@@ -63,7 +81,7 @@ header.hero {
 header.hero--short {
     --h-top: 110px;
     @media (min-width:992px) {
-        --h-top: 160px;
+        --h-top: 120px;
     }
 
     padding-top: var(--h-top);

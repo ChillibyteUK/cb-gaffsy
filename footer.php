@@ -89,7 +89,8 @@ if ($social) {
                 &copy; <?=date('Y')?> Sell House
                 Quick Now Ltd. T/A Gaffsy. Registered in England no 1240334
             </div>
-            <div class="col-md-4 d-flex align-items-center justify-content-end">
+            <div class="col-md-4 d-flex align-items-center justify-content-end flex-wrap gap-3">
+                <a href="/privacy-policy/">Privacy & Cookies</a> |
                 <a href="https://www.chillibyte.co.uk/" rel="nofollow noopener" target="_blank" class="cb"
                     title="Digital Marketing by Chillibyte"></a>
             </div>
