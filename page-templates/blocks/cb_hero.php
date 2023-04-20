@@ -21,7 +21,7 @@ if(isset($_POST['button1'])) {
 ?>
 <header class="hero">
     <div class="pre-bit text-center">
-        <h1><?=get_field('title')?> XXX</h1>
+        <h1><?=get_field('title')?></h1>
         <div class="form-container">
             <form method="POST" action="">
                 <div class="form-inner px-2 py-2 py-sm-0 row">
