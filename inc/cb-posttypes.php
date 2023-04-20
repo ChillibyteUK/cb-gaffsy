@@ -33,7 +33,7 @@ function cb_register_post_types() {
         "exclude_from_search" => true
     ];
 
-    register_post_type( "stories", $args );
+    register_post_type( "case-studies", $args );
 
 }
 
