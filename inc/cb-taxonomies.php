@@ -1,13 +1,12 @@
 <?php
 
-/*
 function cb_register_taxes() {
 
     $args = [
-        "label" => __( "Story Tag", "cb-gaffsy" ),
+        "label" => __( "CS Type", "cb-gaffsy" ),
         "labels" => [
-            "name" => __( "Story Tags", "cb-gaffsy" ),
-            "singular_name" => __( "Story Tag", "cb-gaffsy" ),
+            "name" => __( "CS Types", "cb-gaffsy" ),
+            "singular_name" => __( "CS Type", "cb-gaffsy" ),
         ],
         "public" => true,
         "publicly_queryable" => false,
@@ -25,9 +24,8 @@ function cb_register_taxes() {
         "show_in_quick_edit" => true,
         "show_in_graphql" => false,
     ];
-    register_taxonomy( "storytags", [ "stories" ], $args );
+    register_taxonomy( "cstypes", [ "case-studies" ], $args );
 
 }
 add_action( 'init', 'cb_register_taxes' );
 
-*/
