@@ -4,9 +4,8 @@ defined('ABSPATH') || exit;
 
 get_header();
 ?>
-<main id="main">
 <!-- hero -->
-<main id="main">
+<main id="main" class="caseStudies">
 <header class="hero hero--short">
     <div class="hero_bg" style="background-image: url(/wp-content/uploads/2023/01/hero-home.jpg)"></div>
     <div class="container-xl">
@@ -15,8 +14,7 @@ get_header();
     </div>
 </header>
 <div class="container-xl pb-5">
-    <div class="row gx-4 gy-2 mb-4">
-        <div class="col-lg-4 filters">
+    <div class="mb-4" id="filters">
             <?php
         $terms = get_terms(
             array(
@@ -26,22 +24,46 @@ get_header();
             )
         );
             ?>
-            <select class="filters-select form-select" value-group="cstype">
-                <option value="" disabled selected>Filter by type</option>
-                <option value="*">Show all</option>
-                <?php
-                foreach ($terms as $term) {
-                    echo '<option value=".' . $term->slug . '">' . $term->name . '</option>';
-                }
+        <div class="option-set mb-2" data-group="cstype">
+            <input type="checkbox" class="form-check-input all" value="" id="type-all" checked>
+            <label for="type-all" class="form-check-label">All Types</label>
+            <?php
+            foreach ($terms as $term) {
                 ?>
-            </select>
+                <input type="checkbox" class="form-check-input" value=".<?=$term->slug?>" id="<?=$term->slug?>">
+                <label class="form-check-label" for="<?=$term->slug?>"><?=$term->name?></label>
+                <?php
+            }
+            ?>
         </div>
-        <div class="col-12">
-            <div class="status">
-                <div class="count"><span class="filter-count"></span> items found.</div>
-            </div>
+            <?php
+        $terms = get_terms(
+            array(
+                'taxonomy'   => 'locations',
+                'hide_empty' => true,
+                'order' => 'DESC',
+            )
+        );
+            ?>
+        <div class="option-set mb-2" data-group="location">
+            <input type="checkbox" value="" id="loca-all" class="form-check-input all" checked>
+            <label for="loca-all" class="form-check-label">All Locations</label>
+            <?php
+            foreach ($terms as $term) {
+                ?>
+                <input type="checkbox" class="form-check-input" value=".<?=$term->slug?>" id="<?=$term->slug?>">
+                <label for="<?=$term->slug?>" class="form-check-label"><?=$term->name?></label>
+                <?php
+            }
+            ?>
+        </div>
+        <div class="status">
+            <div class="count"><span class="filter-count"></span> items found.</div>
         </div>
     </div>
+
+    <p id="filter-display"></p>
+
     <div class="row w-100" id="grid">
         <?php
     while (have_posts()) {
@@ -50,30 +72,23 @@ get_header();
         if (!$img) {
             $img = get_stylesheet_directory_uri() . '/img/default.png';
         }
-        $types = get_the_terms($post->ID, 'cstype');
+        $types = get_the_terms($post->ID, 'cstypes');
+        $type = wp_list_pluck($types, 'name');
+        $catclass = implode(' ', array_map('cbslugify', $type));
+
+        $types = get_the_terms($post->ID, 'locations');
         $type = wp_list_pluck($types, 'name');
         $catclass .= ' ' . implode(' ', array_map('cbslugify', $type));
+
         $the_date = get_the_date('jS F, Y');
         ?>
         <div class="<?=$catclass?> caseStudy col-12 col-lg-4 mb-4">
-            <a href="<?=get_the_permalink()?>">
-                <div class="post-image-container">
-                    <div class="post-image mb-2"
-                        style="background-image:url('<?=$img?>')">
-                        <div class="img-overlay">
-                            <div class="middle"><span class="arrow arrow-block arrow-white"></span></div>
-                        </div>
+            <a class="caseStudy_card" href="<?=get_the_permalink()?>">
+                <img class="caseStudy_card__image" src="<?=$img?>">
+                <div class="caseStudy_card__content">
+                    <div class="article-title mb-2">
+                        <?=get_the_title()?>
                     </div>
-                    <div class="flash"><?=$flash?></div>
-                </div>
-                <div class="article-title mt-2">
-                    <?=get_the_title()?>
-                </div>
-                <div class="article-excerpt">
-                    <?=wp_trim_words(get_the_content(), 20)?>
-                </div>
-                <div class="fw-bold py-2 arrow-link">
-                    <div class="anim-arrow--slide">Read more <span class="arrow arrow-green"></span></div>
                 </div>
             </a>
         </div>
@@ -90,41 +105,108 @@ add_action('wp_footer', function () {
     integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+    var $container;
+    var filters = {};
+
     (function($) {
 
         var $filterCount = $('.filter-count');
 
-        // init Isotope
-        var $grid = $('#grid').isotope({
-            itemSelector: '.caseStudy'
-        });
-        // store filter for each group
-        var filters = {};
+        var $container = $('#grid');
 
-        $('.filters').on( 'change', function( event ) {
-            console.log('changed');
-            var $select = $( event.target );
-            // get group key
-            var filterGroup = $select.attr('value-group');
-            // set filter for group
-            filters[ filterGroup ] = event.target.value;
-            // combine filters
-            var filterValue = concatValues( filters );
-            // set filter for Isotope
-            $grid.isotope({ filter: filterValue });
+        // var $filterDisplay = $('#filter-display');
+
+
+        $container.isotope();
+        // do stuff when checkbox change
+        $('#filters').on( 'change', function( jQEvent ) {
+            var $checkbox = $( jQEvent.target );
+            manageCheckbox( $checkbox );
+
+            var comboFilter = getComboFilter( filters );
+
+            $container.isotope({ filter: comboFilter });
+
+            // $filterDisplay.text( comboFilter );
             updateFilterCount();
         });
 
-        // flatten object by concatting values
-        function concatValues( obj ) {
-            var value = '';
-            for ( var prop in obj ) {
-                value += obj[ prop ];
+        function getComboFilter( filters ) {
+
+            var i = 0;
+            var comboFilters = [];
+            var message = [];
+
+            for ( var prop in filters ) {
+                message.push( filters[ prop ].join(' ') );
+                var filterGroup = filters[ prop ];
+                // skip to next filter group if it doesn't have any values
+                if ( !filterGroup.length ) {
+                    continue;
+                }
+                if ( i === 0 ) {
+                    // copy to new array
+                    comboFilters = filterGroup.slice(0);
+                } else {
+                    var filterSelectors = [];
+                    // copy to fresh array
+                    var groupCombo = comboFilters.slice(0); // [ A, B ]
+                    // merge filter Groups
+                    for (var k=0, len3 = filterGroup.length; k < len3; k++) {
+                        for (var j=0, len2 = groupCombo.length; j < len2; j++) {
+                            filterSelectors.push( groupCombo[j] + filterGroup[k] ); // [ 1, 2 ]
+                        }
+                    }
+                    // apply filter selectors to combo filters for next group
+                    comboFilters = filterSelectors;
+                }
+                i++;
             }
-            console.log(value);
-            return value;
+
+            var comboFilter = comboFilters.join(', ');
+            return comboFilter;
         }
-        var iso = $grid.data('isotope');
+
+        function manageCheckbox( $checkbox ) {
+            var checkbox = $checkbox[0];
+
+            var group = $checkbox.parents('.option-set').attr('data-group');
+            // create array for filter group, if not there yet
+            var filterGroup = filters[ group ];
+            if ( !filterGroup ) {
+                filterGroup = filters[ group ] = [];
+            }
+
+            var isAll = $checkbox.hasClass('all');
+            // reset filter group if the all box was checked
+            if ( isAll ) {
+                delete filters[ group ];
+                if ( !checkbox.checked ) {
+                    checkbox.checked = 'checked';
+                }
+            }
+            // index of
+            var index = $.inArray( checkbox.value, filterGroup );
+
+              if ( checkbox.checked ) {
+                var selector = isAll ? 'input' : 'input.all';
+                $checkbox.siblings( selector ).removeAttr('checked');
+                if ( !isAll && index === -1 ) {
+                    // add filter to group
+                    filters[ group ].push( checkbox.value );
+                }
+
+            } else if ( !isAll ) {
+                // remove filter from group
+                filters[ group ].splice( index, 1 );
+                // if unchecked the last box, check the all
+                if ( !$checkbox.siblings('[checked]').length ) {
+                    $checkbox.siblings('input.all').attr('checked', 'checked');
+                }
+            }
+        }
+
+        var iso = $container.data('isotope');
 
         function updateFilterCount() {
             $filterCount.text(iso.filteredItems.length);
