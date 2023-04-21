@@ -1,5 +1,5 @@
 <?php
-$classes = $block['className'];
+$classes = $block['className'] ?? null;
 ?>
 <section class="calculator bg-grey--half py-5 <?=$classes?>">
     <div class="container-xl">
