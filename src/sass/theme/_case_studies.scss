@@ -25,18 +25,20 @@
         margin-bottom: 0.75rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid var(--col-primary);
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: 1fr;
         @media (min-width:768px) {
-            flex-direction: row;
+            grid-template-columns: 1fr 3fr;
         }
         color: #000;
         &__image {
-            width: 200px;
-            height: min-content;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            object-position: center;
+            // width: 200px;
+            img {
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+                object-position: center;
+            }
         }
         &__content {
             padding: 0.5rem 0.5rem 0 0.5rem;
@@ -76,5 +78,13 @@
                 color: var(--col-dark);
             }
         }
+    }
+
+    .quote-container {
+        background-color: var(--col-grey);
+        color: var(--col-darkest);
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
     }
 }

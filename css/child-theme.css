@@ -23748,20 +23748,17 @@ header.hero--short h1 span.smaller, header.hero--short .h1 span.smaller {
   margin-bottom: 0.75rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--col-primary);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr;
   color: #000;
 }
 @media (min-width: 768px) {
   .caseStudies .caseStudy_card {
-    flex-direction: row;
+    grid-template-columns: 1fr 3fr;
   }
 }
-.caseStudies .caseStudy_card__image {
-  width: 200px;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+.caseStudies .caseStudy_card__image img {
   aspect-ratio: 16/9;
   -o-object-fit: cover;
   object-fit: cover;
@@ -23805,6 +23802,13 @@ header.hero--short h1 span.smaller, header.hero--short .h1 span.smaller {
   font-weight: bold;
   font-size: 0.8rem;
   color: var(--col-dark);
+}
+.caseStudies .quote-container {
+  background-color: var(--col-grey);
+  color: var(--col-darkest);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
 }
 
 a.noline {

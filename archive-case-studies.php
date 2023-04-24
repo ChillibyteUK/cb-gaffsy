@@ -19,10 +19,10 @@ get_header();
             <?php
         $terms = get_terms(
     array(
-                        'taxonomy'   => 'cstypes',
-                        'hide_empty' => true,
-                        'order' => 'DESC',
-                    )
+                                                'taxonomy'   => 'cstypes',
+                                                'hide_empty' => true,
+                                                'order' => 'DESC',
+                                            )
 );
 ?>
             <div class="option-set mb-2" data-group="cstype">
@@ -44,13 +44,14 @@ foreach ($terms as $term) {
 }
 ?>
             </div>
+            <hr>
             <?php
         $terms = get_terms(
     array(
-                        'taxonomy'   => 'locations',
-                        'hide_empty' => true,
-                        'order' => 'DESC',
-                    )
+                                                'taxonomy'   => 'locations',
+                                                'hide_empty' => true,
+                                                'order' => 'DESC',
+                                            )
 );
 ?>
             <div class="option-set mb-2" data-group="location">
@@ -99,8 +100,9 @@ foreach ($terms as $term) {
         ?>
             <div class="<?=$catclass?> caseStudy w-100 mb-4">
                 <div class="caseStudy_card">
-                    <img class="caseStudy_card__image"
-                        src="<?=$img?>">
+                    <div class="caseStudy_card__image">
+                        <img src="<?=$img?>" alt="">
+                    </div>
                     <div class="caseStudy_card__content">
                         <div class="article-title mb-2">
                             <?=get_the_title()?>
@@ -111,17 +113,21 @@ foreach ($terms as $term) {
                         <?php
                     if (get_field('quote')) {
                         ?>
-                        <div class="article-quote">
-                            <?=apply_filters('the_content', get_field('quote'))?>
-                        </div>
-                        <?php
+                        <div class="quote-container">
+                            <div class="article-quote">
+                                <?=apply_filters('the_content', get_field('quote'))?>
+                            </div>
+                            <?php
                         if (get_field('attribution')) {
                             ?>
-                        <div class="article-attrib">
-                            <?=get_field('attribution')?>
+                            <div class="article-attrib">
+                                <?=get_field('attribution')?>
+                            </div>
+                            <?php
+                        }
+                        ?>
                         </div>
                         <?php
-                        }
                     }
         ?>
                         <div class="article-highlights">
