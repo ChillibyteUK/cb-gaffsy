@@ -202,23 +202,34 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_case_studies',
+            'title'				=> __('CB Case Studies'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_case_studies.php',
+            'keywords'			=> array( 'case','studies' ),
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
     }
 }
 add_action('acf/init', 'acf_blocks');
 
 // Gutenburg core modifications
-add_filter( 'register_block_type_args', 'core_image_block_type_args', 10, 3 );
-function core_image_block_type_args( $args, $name ) {
-    if ( $name == 'core/paragraph' ) {
+add_filter('register_block_type_args', 'core_image_block_type_args', 10, 3);
+function core_image_block_type_args($args, $name)
+{
+    if ($name == 'core/paragraph') {
         $args['render_callback'] = 'modify_core_add_container';
     }
-    if ( $name == 'core/list' ) {
+    if ($name == 'core/list') {
         $args['render_callback'] = 'modify_core_add_container';
     }
-    if ( $name == 'core/columns' ) {
+    if ($name == 'core/columns') {
         // $args['render_callback'] = 'modify_core_add_container';
     }
-    if ( $name == 'core/heading' ) {
+    if ($name == 'core/heading') {
         $args['render_callback'] = 'modify_core_heading';
     }
     // if ( $name == 'core/button' ) {
@@ -233,27 +244,29 @@ function core_image_block_type_args( $args, $name ) {
     return $args;
 }
 
-function modify_core_add_container($attributes, $content) {
+function modify_core_add_container($attributes, $content)
+{
     ob_start();
     // $class = $block['className'];
     ?>
-    <div class="container-xl">
-        <?=$content?>
-    </div>
-    <?php
+<div class="container-xl">
+    <?=$content?>
+</div>
+<?php
     $content = ob_get_clean();
     return $content;
 }
 
-function modify_core_heading($attributes, $content) {
+function modify_core_heading($attributes, $content)
+{
     ob_start();
-    $id = strtolower( wp_strip_all_tags( $content ) );
+    $id = strtolower(wp_strip_all_tags($content));
     $id = cbslugify($id);
     ?>
-    <div class="container-xl" id="<?=$id?>">
-        <?=$content?>
-    </div>
-    <?php
+<div class="container-xl" id="<?=$id?>">
+    <?=$content?>
+</div>
+<?php
     $content = ob_get_clean();
     return $content;
 }
@@ -298,3 +311,4 @@ function modify_core_quote($attributes, $content) {
 }
 
 */
+?>

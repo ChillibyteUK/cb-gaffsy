@@ -19,10 +19,10 @@ get_header();
             <?php
         $terms = get_terms(
     array(
-                                                'taxonomy'   => 'cstypes',
-                                                'hide_empty' => true,
-                                                'order' => 'DESC',
-                                            )
+                'taxonomy'   => 'cstypes',
+                'hide_empty' => true,
+                'order' => 'DESC',
+            )
 );
 ?>
             <div class="option-set mb-2" data-group="cstype">
@@ -48,10 +48,10 @@ foreach ($terms as $term) {
             <?php
         $terms = get_terms(
     array(
-                                                'taxonomy'   => 'locations',
-                                                'hide_empty' => true,
-                                                'order' => 'DESC',
-                                            )
+                'taxonomy'   => 'locations',
+                'hide_empty' => true,
+                'order' => 'DESC',
+            )
 );
 ?>
             <div class="option-set mb-2" data-group="location">
@@ -97,8 +97,11 @@ foreach ($terms as $term) {
         $catclass .= ' ' . implode(' ', array_map('cbslugify', $type));
 
         $the_date = get_the_date('jS F, Y');
+
+        $slug = acf_slugify(basename(get_the_permalink()));
         ?>
             <div class="<?=$catclass?> caseStudy w-100 mb-4">
+                <a class="anchor" id="<?=$slug?>"></a>
                 <div class="caseStudy_card">
                     <div class="caseStudy_card__image">
                         <img src="<?=$img?>" alt="">
