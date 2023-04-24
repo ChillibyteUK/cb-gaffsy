@@ -23764,6 +23764,7 @@ header.hero--short h1 span.smaller, header.hero--short .h1 span.smaller {
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
+  border-radius: 0.25rem;
 }
 .caseStudies .caseStudy_card__content {
   padding: 0.5rem 0.5rem 0 0.5rem;
