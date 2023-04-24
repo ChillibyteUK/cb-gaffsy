@@ -64,7 +64,7 @@ get_header();
 
     <p id="filter-display"></p>
 
-    <div class="row w-100" id="grid">
+    <div class="w-100" id="grid">
         <?php
     while (have_posts()) {
         the_post();
@@ -82,15 +82,61 @@ get_header();
 
         $the_date = get_the_date('jS F, Y');
         ?>
-        <div class="<?=$catclass?> caseStudy col-12 col-lg-4 mb-4">
-            <a class="caseStudy_card" href="<?=get_the_permalink()?>">
+        <div class="<?=$catclass?> caseStudy w-100 mb-4">
+            <div class="caseStudy_card">
                 <img class="caseStudy_card__image" src="<?=$img?>">
                 <div class="caseStudy_card__content">
                     <div class="article-title mb-2">
                         <?=get_the_title()?>
                     </div>
+                    <div class="article-body">
+                        <?=get_the_content()?>
+                    </div>
+                    <?php
+                    if (get_field('quote')) {
+                        ?>
+                    <div class="article-quote">
+                        <?=apply_filters('the_content',get_field('quote'))?>
+                    </div>
+                        <?php
+                        if (get_field('attribution')) {
+                            ?>
+                    <div class="article-attrib"><?=get_field('attribution')?></div>
+                            <?php
+                        }
+                    }
+                    ?>
+                    <div class="article-highlights">
+                        <?php
+                        $hl = get_field('highlights');
+                        if ($hl['offered'] ?? null) {
+                            ?>
+                            <div>
+                                <img decoding="async" src="/wp-content/uploads/2023/01/icon__free-cash-offer.svg" width="60" height="40">
+                                <span><?=$hl['offered']?></span>
+                            </div>
+                            <?php
+                        }
+                        if ($hl['duration'] ?? null) {
+                            ?>
+                            <div>
+                                <img decoding="async" src="/wp-content/uploads/2023/02/icon__complete.svg" width="60" height="40">
+                                <span><?=$hl['duration']?></span>
+                            </div>
+                            <?php
+                        }
+                        if ($hl['price'] ?? null) {
+                            ?>
+                            <div>
+                                <img decoding="async" src="/wp-content/uploads/2023/01/icon__no-fees.svg" width="60" height="40">
+                                <span><?=$hl['price']?></span>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </div>
                 </div>
-            </a>
+            </div>
         </div>
         <?php
     }
