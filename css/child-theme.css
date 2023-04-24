@@ -23733,13 +23733,13 @@ header.hero--short h1 span.smaller, header.hero--short .h1 span.smaller {
   padding: 1rem;
   border-radius: 0.25rem;
 }
-.caseStudies .form-check-input, .caseStudies .form-check-label {
-  cursor: pointer;
+.caseStudies .option-set {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.caseStudies .form-check-label {
-  display: inline-block;
-  font-size: 0.8rem;
-  width: 9rem;
+.caseStudies .form-check * {
+  cursor: pointer;
 }
 .caseStudies .status {
   font-size: 0.8rem;

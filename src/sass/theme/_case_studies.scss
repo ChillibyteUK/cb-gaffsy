@@ -7,14 +7,17 @@
         padding: 1rem;
         border-radius: 0.25rem;
     }
-    .form-check-input, .form-check-label {
-        cursor: pointer;
+    .option-set {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
-    .form-check-label {
-        display: inline-block;
-        font-size: 0.8rem;
-        width: 9rem;
+    .form-check {
+        * {
+            cursor: pointer;
+        }
     }
+
     .status {
         font-size: 0.8rem;
     }
