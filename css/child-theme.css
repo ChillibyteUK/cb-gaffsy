@@ -23812,6 +23812,23 @@ header.hero--short h1 span.smaller, header.hero--short .h1 span.smaller {
   font-size: 1rem;
 }
 
+.case_studies_excerpt .blog_card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.case_studies_excerpt .blog_card__image {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 1rem;
+}
+.case_studies_excerpt .blog_card__title {
+  font-weight: 600;
+}
+
 a.noline {
   text-decoration: none;
 }
