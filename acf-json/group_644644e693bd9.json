@@ -119,6 +119,26 @@
                     "append": ""
                 }
             ]
+        },
+        {
+            "key": "field_6447993434093",
+            "label": "Excerpt",
+            "name": "excerpt",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional. Displayed in \"CB Case Studies w Excerpt\" block.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -139,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682342239
+    "modified": 1682413912
 }

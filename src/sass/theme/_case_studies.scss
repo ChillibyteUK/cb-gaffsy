@@ -93,13 +93,18 @@
 .case_studies_excerpt {
     .blog_card {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr;
+        @media (min-width:992px) {
+            grid-template-columns: 1fr 2fr;
+        }
         &__image {
             height: 100%;
             object-fit: cover;
             object-position: center;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 1rem;
+            @media (min-width:992px) {
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 1rem;
+            }
         }
         &__title {
             font-weight: 600;
