@@ -9,7 +9,8 @@ $classes = $block['className'] ?? null;
                 <div class="col-12">
                     <div>Your House Valuation</div>
                     <div id="valuation"></div>
-                    <input type="range" class="form-range" min="1" max="5" id="price" value="1">
+                    <label for="range" class="visually-hidden">Price</label>
+                    <input type="range" id="range" class="form-range" min="1" max="5" id="price" value="1">
                 </div>
                 <div class="col-md-6">
                     <div id="esLabel" class="fw-bold">Typical<br>Estate Agent</div>
