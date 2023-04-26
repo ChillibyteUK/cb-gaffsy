@@ -21,10 +21,10 @@
                 $title = get_sub_field('title') ?: get_the_title($thePost);
                 $ol = $ol == 'odd' ? 'even' : 'odd';
                 if (get_field('card_image', $thePost)) {
-                    $img = wp_get_attachment_image_url(get_field('card_image', $thePost), 'large');
+                    $img = parse_url(wp_get_attachment_image_url(get_field('card_image', $thePost), 'large'), PHP_URL_PATH);
                 }
                 else {
-                    $img = get_the_post_thumbnail_url($thePost,'large');
+                    $img = parse_url(get_the_post_thumbnail_url($thePost,'large'), PHP_URL_PATH);
                 }
                 ?>
             <div class="col-md-6 col-xl-4">
