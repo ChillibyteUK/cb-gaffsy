@@ -9,7 +9,7 @@ defined('ABSPATH') || exit;
             <div class="col-lg-4">
                 <div class="mb-4">
                     <img src="<?=get_stylesheet_directory_uri()?>/img/gaffsy-logo--wo.svg"
-                        class="footer__logo" alt="Gaffsy Logo">
+                        class="footer__logo" alt="Gaffsy Logo" width=200 height=65>
                     <p><?=get_field('about', 'options')?>
                     </p>
 
@@ -72,7 +72,7 @@ if ($social) {
                         <p>Registered with the Information Commissioner's Office under ref: ZA771201</p>
                         <div class="logos d-flex justify-content-start gap-4">
                             <img src="<?=get_stylesheet_directory_uri()?>/img/logo-napb.png "
-                                alt="NAPB">
+                                alt="NAPB" width=63 height=63>
                             <img src="<?=get_stylesheet_directory_uri()?>/img/logo-prop-ombudsman.png "
                                 alt="The Property Ombudsman" width=159 height=56 style="object-fit:contain">
                         </div>
