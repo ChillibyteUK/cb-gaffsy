@@ -22547,6 +22547,9 @@ strong, b {
     font-size: 1.2rem;
     padding: 1rem 0;
   }
+  #wrapper-navbar .navbar #navbar .dropdown-item {
+    padding-left: 0.5rem;
+  }
 }
 #wrapper-navbar .logo-container {
   max-width: 180px;
