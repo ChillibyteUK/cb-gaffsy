@@ -38,9 +38,11 @@ if(isset($_POST['button1'])) {
         ?>
     <section class="bullets pt-4">
         <div class="container-xl d-flex justify-content-around flex-wrap text-center">
-            <li><span>FREE cash offer</span> within minutes</li>
-            <li>Receive funds in <span>7 days</span></li>
-            <li>A guaranteed sale on <span>any property</span></li>
+            <ul>
+                <li><span>FREE cash offer</span> within minutes</li>
+                <li>Receive funds in <span>7 days</span></li>
+                <li>A guaranteed sale on <span>any property</span></li>
+            </ul>
         </div>
     </section>
         <?php

@@ -23129,7 +23129,11 @@ header.hero .bullets {
   margin-left: 0;
   padding-left: 0;
 }
+header.hero .bullets ul {
+  display: contents;
+}
 header.hero .bullets li {
+  list-style-type: none;
   padding-left: 1em;
   text-indent: -1em;
 }
