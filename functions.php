@@ -42,7 +42,7 @@ function theme_enqueue_styles() {
 
 	wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $the_theme->get( 'Version' ) );
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $the_theme->get( 'Version' ), true );
+	wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array('jquery'), $the_theme->get( 'Version' ), true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -50,6 +50,18 @@ function theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 
+function cb_defer_scripts( $tag, $handle, $src ) {
+	$defer = array( 
+	  'child-understrap-scripts',
+	  'jquery'
+	);
+	if ( in_array( $handle, $defer ) ) {
+	   return '<script src="' . $src . '" defer="defer" type="text/javascript"></script>' . "\n";
+	}
+	  
+	  return $tag;
+  } 
+  add_filter( 'script_loader_tag', 'cb_defer_scripts', 10, 3 );
 
 /**
  * Load the child theme's text domain
