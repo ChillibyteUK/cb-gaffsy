@@ -19,6 +19,7 @@ if(isset($_POST['button1'])) {
 }
 
 ?>
+<link rel="preload" as="image" href="<?=$img?>">
 <header class="hero">
     <div class="pre-bit text-center">
         <h1><?=get_field('title')?></h1>
