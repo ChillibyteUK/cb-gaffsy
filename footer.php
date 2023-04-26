@@ -74,7 +74,7 @@ if ($social) {
                             <img src="<?=get_stylesheet_directory_uri()?>/img/logo-napb.png "
                                 alt="NAPB">
                             <img src="<?=get_stylesheet_directory_uri()?>/img/logo-prop-ombudsman.png "
-                                alt="The Property Ombudsman" width=159 height=56>
+                                alt="The Property Ombudsman" width=159 height=56 style="object-fit:contain">
                         </div>
                     </div>
                 </div>
