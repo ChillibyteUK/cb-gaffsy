@@ -19,16 +19,13 @@ session_start();
         charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1">
     <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v20-latin-300.woff2"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/archivo-v18-latin-200.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v20-latin-500.woff2"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/archivo-v18-latin-regular.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v20-latin-600.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v20-latin-700.woff2"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/archivo-v18-latin-700.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <?php
 if (get_field('ga_property', 'options')) {
@@ -88,19 +85,19 @@ wp_head();
         {
             "@context": "http://schema.org",
             "@type": "Organization",
-            "name": "Gaffsy",
-            "url": "https://www.gaffsy.com/",
-            "logo": "https://www.gaffsy.com/wp-content/theme/cb-gaffsy/img/gaffsy-logo.jpg",
-            "description": "Sell House Fast | Quick House Sale For Cash | Gaffsy",
+            "name": "NE Property Buyers",
+            "url": "https://www.nepropertybuyers.co.uk/",
+            "logo": "https://www.gaffsy.com/wp-content/theme/cb-nepb/img/nepb-logo.jpg",
+            "description": "Sell House Fast | Quick House Sale For Cash | NE Property Buyers",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Argyle House, 29-31 Euston Road",
-                "addressRegion": "London",
-                "postalCode": "NW1 2SD",
+                "streetAddress": "---",
+                "addressRegion": "---",
+                "postalCode": "---",
                 "addressCountry": "UK"
             },
-            "telephone": "+44 (0) 207 459 4546",
-            "email": "info@gaffsy.com",
+            "telephone": "+44 (0) --- --- ----",
+            "email": "info@nepropertybuyers.co.uk",
             "sameAs": [
                 "https://twitter.com/",
                 "https://www.facebook.com/",
@@ -129,7 +126,7 @@ do_action('wp_body_open');
                 </button>
             </div>
             <div class="d-none d-xl-flex phone-container">
-                <a href="<?=parse_phone(get_field('contact_phone','options'))?>" class="nav-top__phone">
+                <a href="tel:<?=parse_phone(get_field('contact_phone','options'))?>" class="nav-top__phone">
                     <div><i class="fas fa-phone-alt"></i></div>
                     <div><?=get_field('contact_phone','options')?></span></div>
                 </a>
