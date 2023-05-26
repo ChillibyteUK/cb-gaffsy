@@ -49,7 +49,7 @@
                     <div class="card__step" data-aos="zoom-in" data-aos-delay="550">
                         <p>3</p>
                     </div>
-                    <div class="card__icon"><img src="<?=$img3?>" width=120 height=80 alt="icon"></div>
+                    <div class="card__icon"><img src="<?=$img3?>" width=120 height=80 alt="<?=$alt3[1]?> icon"></div>
                     <div class="card__title">
                         <h3><?=get_field('title_3')?>
                         </h3>

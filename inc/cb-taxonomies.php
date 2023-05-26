@@ -3,10 +3,10 @@
 function cb_register_taxes() {
 
     $args = [
-        "label" => __( "CS Type", "cb-nepb" ),
+        "label" => __( "CS Type", "cb-gaffsy" ),
         "labels" => [
-            "name" => __( "CS Types", "cb-nepb" ),
-            "singular_name" => __( "CS Type", "cb-nepb" ),
+            "name" => __( "CS Types", "cb-gaffsy" ),
+            "singular_name" => __( "CS Type", "cb-gaffsy" ),
         ],
         "public" => true,
         "publicly_queryable" => false,
@@ -25,10 +25,10 @@ function cb_register_taxes() {
     register_taxonomy( "cstypes", [ "case-studies" ], $args );
 
     $args = [
-        "label" => __( "Location", "cb-nepb" ),
+        "label" => __( "Location", "cb-gaffsy" ),
         "labels" => [
-            "name" => __( "Location", "cb-nepb" ),
-            "singular_name" => __( "Locations", "cb-nepb" ),
+            "name" => __( "Location", "cb-gaffsy" ),
+            "singular_name" => __( "Locations", "cb-gaffsy" ),
         ],
         "public" => true,
         "publicly_queryable" => false,

@@ -2,7 +2,7 @@
 #wrapper-navbar {
 
     .navbar-toggler i {
-        color: var(--col-primary);
+        color: #fff;
     }
 
     .navbar {
@@ -24,10 +24,9 @@
             }
         }
 
-        background-color: white;
-
+        background-color: var(--col-primary);
         a:not(.btn--accent) {
-            color: var(--col-darkest);
+            color: white;
             text-decoration: none;
             font-size: 1rem;
             font-weight: 500;
@@ -60,7 +59,7 @@
         margin-right: 1rem;
     }
     .logo {
-        background-image: url(../img/nepb-logo.svg);
+        background-image: url(../img/gaffsy-logo--wo.svg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -69,6 +68,10 @@
         height: 50px;
         width: 150px;
         max-width: 100%;
+        transition: all 0.2s ease;
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     @media (min-width:992px) {
