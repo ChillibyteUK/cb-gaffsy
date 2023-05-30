@@ -1,5 +1,5 @@
 <?php
-$img = get_the_post_thumbnail_url(get_the_ID(),'full');
+$img = parse_url(get_the_post_thumbnail_url(get_the_ID(),'full'),PHP_URL_PATH);
 
 if ($_POST['postcodehome1'] ?? null) {
     ?>
