@@ -10,8 +10,7 @@ get_header();
         <div class="hero_bg" style="background-image: url(/wp-content/uploads/2023/01/hero-home.jpg)"></div>
         <div class="container-xl">
             <h1>Read our <span>Case Studies</span></h1>
-            <div class="mw-md-75 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-                architecto ad, dolore amet temporibus obcaecati voluptatibus ducimus velit possimus dignissimos!</div>
+            <div class="mw-md-75 text-center"></div>
         </div>
     </header>
     <div class="container-xl pb-5">
@@ -44,7 +43,7 @@ foreach ($terms as $term) {
 }
 ?>
             </div>
-            <hr>
+            <!-- hr>
             <?php
         $terms = get_terms(
     array(
@@ -72,7 +71,7 @@ foreach ($terms as $term) {
                 <?php
 }
 ?>
-            </div>
+            </div -->
             <div class="status">
                 <div class="count"><span class="filter-count"></span> items found.</div>
             </div>
