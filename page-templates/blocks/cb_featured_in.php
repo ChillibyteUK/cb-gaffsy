@@ -21,7 +21,7 @@
 }
 </style>
 <section class="featured_in">
-    <div class="container-xl py-5">
+    <div class="container-xl pt-5 pb-3">
         <?php
         if (get_field('title')) {
             ?>
