@@ -36,7 +36,8 @@ $img = get_the_post_thumbnail_url(get_the_ID(),'full');
                 $sidebar[$heading] = $id;
             }
         }
-        echo render_block($block);
+        // echo render_block($block);
+        echo apply_filters( 'the_content', render_block( $block ) );
     }
             ?>
             </div>
