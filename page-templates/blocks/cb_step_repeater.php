@@ -4,7 +4,7 @@ $arrow = get_field('show_arrow')[0];
 <section class="step_repeater py-5">
     <div class="container-xl">
         <h2 class="text-center mb-4"><?=get_field('title')?></h2>
-        <div class="text-center mw-md-75 mb-5"><?=get_field('intro')?></div>
+        <div class="text-center mw-md-75 mb-5"><?=apply_filters('the_content', get_field('intro'))?></div>
         <div class="row g-4 justify-content-center mw-md-75">
             <?php
             $n = 1;
