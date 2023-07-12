@@ -23080,6 +23080,10 @@ header.hero h1, header.hero .h1 {
   font-weight: 300;
   margin: 1rem 0;
   min-height: 6.3rem;
+  display: grid;
+  gap: 0.4ch;
+  place-content: center;
+  grid-auto-flow: column;
 }
 header.hero h1 span, header.hero .h1 span {
   font-weight: 700;
