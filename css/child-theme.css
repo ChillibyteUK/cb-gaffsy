@@ -23074,12 +23074,17 @@ header.hero {
   margin-bottom: 3rem;
   padding-top: 100px;
 }
+header.hero .page-title {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  min-height: 6.3rem;
+}
 header.hero h1, header.hero .h1 {
   font-size: 2rem;
   font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
   font-weight: 300;
   margin: 1rem 0;
-  min-height: 6.3rem;
 }
 header.hero h1 span, header.hero .h1 span {
   font-weight: 700;

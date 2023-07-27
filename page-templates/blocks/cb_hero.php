@@ -22,7 +22,9 @@ if(isset($_POST['button1'])) {
 <link rel="preload" as="image" href="<?=$img?>">
 <header class="hero">
     <div class="pre-bit text-center">
-        <h1><?=get_field('title')?></h1>
+        <div class="page-title">
+            <h1><?=get_field('title')?></h1>
+        </div>
         <div class="form-container">
             <form method="POST" action="">
                 <div class="form-inner px-2 py-2 py-sm-0 row">

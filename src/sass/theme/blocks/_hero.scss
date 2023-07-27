@@ -5,21 +5,21 @@ header.hero {
 
     padding-top: 100px;
 
+    .page-title {
+        display: grid;
+        place-content: center;
+        height: 100%;
+        min-height: 6.3rem;
+    }
     h1 {
         font-size: 2rem;
         font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
         font-weight: 300;
         margin: 1rem 0;
-        min-height: 6.3rem;
         span {
             font-weight: 700;
             color: var(--col-primary);
         }
-
-        // display: grid;
-        // gap: 0.4ch;
-        // place-content: center;
-        // grid-auto-flow: column;
     }
 
     .form-container {
