@@ -139,7 +139,7 @@ function cb_dashboard_widget_display()
     <img style="width: 50%;"
         src="<?= get_stylesheet_directory_uri().'/img/cb-full.jpg'; ?>">
     <a class="button button-primary" target="_blank" rel="noopener nofollow noreferrer"
-        href="mailto:hello@www.chillibyte.co.uk/">Contact</a>
+        href="mailto:hello@chillibyte.co.uk">Contact</a>
 </div>
 <div>
     <p><strong>Thanks for choosing Chillibyte!</strong></p>

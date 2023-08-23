@@ -8,7 +8,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_hero.php',
-            'keywords'			=> array( 'hero' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -18,7 +17,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_short_hero.php',
-            'keywords'			=> array( 'short', 'hero' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -28,7 +26,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_leadin.php',
-            'keywords'			=> array( 'lead in' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -38,7 +35,15 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_text_image.php',
-            'keywords'			=> array( 'text','image' ),
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_text_video',
+            'title'				=> __('CB Text Video'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_text_video.php',
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -48,7 +53,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_step_cards.php',
-            'keywords'			=> array( 'step', 'cards' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -58,7 +62,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_step_repeater.php',
-            'keywords'			=> array( 'step', 'repeater' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -68,7 +71,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_nav_cards.php',
-            'keywords'			=> array( 'nav', 'cards' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -78,7 +80,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_quote_cta.php',
-            'keywords'			=> array( 'quote', 'cta', 'bar' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -88,7 +89,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_faqs.php',
-            'keywords'			=> array( 'faqs' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -98,7 +98,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_benefits.php',
-            'keywords'			=> array( 'benefits' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -108,7 +107,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_compare.php',
-            'keywords'			=> array( 'compare' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -118,7 +116,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_cta_block.php',
-            'keywords'			=> array( 'cta', 'block' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -128,7 +125,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_contact.php',
-            'keywords'			=> array( 'contact' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -138,7 +134,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_icon_grid.php',
-            'keywords'			=> array( 'icon', 'grid' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -148,7 +143,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_team_cols.php',
-            'keywords'			=> array( 'team', 'cols' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -158,7 +152,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_hs_form.php',
-            'keywords'			=> array( 'hubspot', 'form' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -168,7 +161,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_latest_guides.php',
-            'keywords'			=> array( 'latest', 'guides' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -187,7 +179,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_steps.php',
-            'keywords'			=> array( 'steps' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -197,7 +188,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_calculator.php',
-            'keywords'			=> array( 'calculator' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -207,7 +197,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_featured_in.php',
-            'keywords'			=> array( 'featured','in' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -217,7 +206,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_case_studies.php',
-            'keywords'			=> array( 'case','studies' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -227,7 +215,6 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_case_studies_excerpt.php',
-            'keywords'			=> array( 'case','studies', 'excerpt' ),
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
