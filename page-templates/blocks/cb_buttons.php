@@ -1,5 +1,5 @@
 <?php
-$theme = get_field('theme') == 'Light' ? 'pb-5' : 'has-grey-background-color py-5';
+$theme = get_field('theme') == 'Light' ? 'pb-5' : 'has-grey-background-color py-5 mb-5';
 ?>
 <section class="buttons <?=$theme?>">
     <div class="container-xl">
