@@ -128,21 +128,27 @@ do_action('wp_body_open');
                         <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <div class="d-none d-xl-flex phone-container">
-                <a href="tel:<?=parse_phone(get_field('contact_phone','options'))?>" class="nav-top__phone">
-                    <div><i class="fas fa-phone-alt"></i></div>
-                    <div><?=get_field('contact_phone','options')?></span></div>
-                </a>
-            </div>
+            <div class="nav-container w-100">
+                <div class="topnav d-flex justify-content-end gap-4 mb-2">
+                    <div class="d-none d-lg-flex phone-container">
+                        <a href="tel:<?=parse_phone(get_field('contact_phone','options'))?>" class="nav-top__phone">
+                            <div><i class="fas fa-phone-alt"></i></div>
+                            <div><?=get_field('contact_phone','options')?></span></div>
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-center cta-container">
+                        <a href="/get-offer/" class="d-none d-lg-inline btn btn--accent">Free Cash Offer</a>
+                    </div>
+                </div>
             
-            <div class="collapse navbar-collapse" id="navbar">
+                <div class="collapse navbar-collapse" id="navbar">
                     <?php
                     wp_nav_menu(
     array(
         'theme_location'  => 'primary_nav',
         'container_class' => 'w-100',
         // 'container_id'    => 'primaryNav',
-        'menu_class'      => 'navbar-nav justify-content-around w-100',
+        'menu_class'      => 'navbar-nav justify-content-between w-100 ps-md-5',
         'fallback_cb'     => '',
         'menu_id'         => 'navbarr',
         'depth'           => 3,
@@ -150,9 +156,7 @@ do_action('wp_body_open');
     )
 );
 ?>
-            </div>
-            <div class="d-flex justify-content-end align-items-center cta-container">
-                <a href="/get-offer/" class="d-none d-lg-inline btn btn--accent">Free Cash Offer</a>
+                </div>
             </div>
         </div>
     </nav>
