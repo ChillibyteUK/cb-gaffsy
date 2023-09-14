@@ -7,7 +7,7 @@ get_header();
 ?>
 <main id="main">
 <header class="hero hero--short">
-    <div class="hero_bg" style="background-image: url(/wp-content/uploads/2023/01/hero-home.jpg)"></div>
+    <div class="hero_bg"><div class="hero_bg_img" style="background-image: url(/wp-content/uploads/2023/01/hero-home.jpg)"></div></div>
     <div class="container-xl">
         <h1>Discover Our <span>Property Guides</span></h1>
         <div class="mw-md-75 text-center">Our detailed and informative property guides are a step-by-step resource to help you sell your house quickly, safely and successfully. We make your selling process easier by providing you up-to-date and step-by-step information on the property industry.</div>

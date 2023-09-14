@@ -6,7 +6,7 @@ get_header();
 ?>
 <main id="main">
 <header class="hero hero--short">
-    <div class="hero_bg" style="background-image: url(/wp-content/uploads/2023/01/hero-home.jpg)"></div>
+    <div class="hero_bg"><div class="hero_bg_img" style="background-image: url(/wp-content/uploads/2023/01/hero-home.jpg)"></div></div>
     <div class="container-xl">
         <h1><span>Gaffsy</span> Guides</h1>
     </div>

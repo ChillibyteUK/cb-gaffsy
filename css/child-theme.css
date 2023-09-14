@@ -23182,6 +23182,9 @@ header.hero--short h1 span.smaller, header.hero--short .h1 span.smaller {
   color: initial;
   font-weight: 300;
 }
+header.hero--short .hero_bg_img {
+  top: 0;
+}
 
 .step_card.card {
   height: 100%;
