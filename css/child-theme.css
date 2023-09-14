@@ -23132,6 +23132,9 @@ header.hero .hero_bg_img {
   height: 100%;
   position: fixed;
   top: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 header.hero .bullets {
   font-weight: 300;
