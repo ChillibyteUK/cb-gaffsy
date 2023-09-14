@@ -34,7 +34,7 @@ if(isset($_POST['button1'])) {
             </form>
         </div>
     </div>
-    <div class="hero_bg" style="background-image: url(<?=$img?>)"></div>
+    <div class="hero_bg"><div class="hero_bg_img" style="background-image: url(<?=$img?>)"></div></div>
     <?php
     if (get_field('show_bullets')) {
         ?>

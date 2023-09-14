@@ -23127,6 +23127,12 @@ header.hero .hero_bg {
     background-attachment: initial;
   }
 }
+header.hero .hero_bg_img {
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  top: 100px;
+}
 header.hero .bullets {
   font-weight: 300;
   font-size: 1.1rem;
