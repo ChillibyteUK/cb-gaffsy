@@ -23129,7 +23129,7 @@ header.hero .hero_bg {
 }
 header.hero .hero_bg_img {
   width: 100vw;
-  height: 100%;
+  height: 570px;
   position: fixed;
   top: var(--h-top);
   background-position: center;
