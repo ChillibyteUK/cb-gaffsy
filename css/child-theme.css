@@ -23124,7 +23124,7 @@ header.hero .hero_bg {
 }
 @media (min-width: 992px) {
   header.hero .hero_bg {
-    height: 300px;
+    height: 440px;
   }
 }
 @supports (-webkit-touch-callout: none) {
@@ -23134,7 +23134,7 @@ header.hero .hero_bg {
 }
 header.hero .hero_bg_img {
   width: 100vw;
-  height: 570px;
+  height: 680px;
   position: fixed;
   top: var(--h-top);
   background-position: center;
