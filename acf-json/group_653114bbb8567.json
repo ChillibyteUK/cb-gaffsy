@@ -168,7 +168,7 @@
                 },
                 {
                     "key": "field_65311c31a515e",
-                    "label": "YoY Delta",
+                    "label": "Δ YoY %",
                     "name": "yoy_delta",
                     "aria-label": "",
                     "type": "number",
@@ -187,6 +187,32 @@
                     "step": "",
                     "prepend": "",
                     "append": "",
+                    "parent_repeater": "field_653114cef5477"
+                },
+                {
+                    "key": "field_65312ba263e7d",
+                    "label": "Δ Direction",
+                    "name": "direction",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "up": "up",
+                        "down": "down"
+                    },
+                    "default_value": "up",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "layout": "horizontal",
+                    "save_other_choice": 0,
                     "parent_repeater": "field_653114cef5477"
                 }
             ]
@@ -210,5 +236,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697717314
+    "modified": 1697721382
 }
