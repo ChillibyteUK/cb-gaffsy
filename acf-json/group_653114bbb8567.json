@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
+            "message": "Used by the locdata shortcode.\r\n\r\nUsage:\r\n[locdata location=\"LOCATION\" value=\"VALUE\"]\r\n\r\nWhere:\r\nLOCATION is the name of the borough.\r\nVALUE is one of avgPrice, avgTime, pType, pAvg, delta, or dir.\r\n\r\ne.g.: [locdata location=\"Barnet\" value=\"avgPrice\"]",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -236,5 +236,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697721382
+    "modified": 1697721683
 }
