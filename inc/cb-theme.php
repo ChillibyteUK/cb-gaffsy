@@ -236,6 +236,53 @@ function cb_theme_enqueue()
 add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
 
 
+add_shortcode('locdata', 'locdata');
+
+function locdata ($atts){
+
+
+    // ob_start();
+
+    extract(shortcode_atts(array(
+       'location' => 1,
+       'value' => 1,
+    ), $atts));
+ 
+    // cbdump($atts);
+    // return $location;
+
+    if ($location == 1 || $value == 1) {
+        return 'NO LOCATION/VALUE SPECIFIED';
+    }
+
+    $output = '';
+
+    while (have_rows('location_data','options')) {
+        the_row();
+        $locaName = get_sub_field('location');
+        if ($locaName && $locaName->name == $location) {
+            if ($value == 'avgPrice') {
+                $output = '&pound;' . number_format(get_sub_field('avgPrice'));
+            }
+            if ($value == 'avgTime') {
+                $output = get_sub_field('avgTime');
+            }
+            if ($value == 'pType') {
+                $output = get_sub_field('pType');
+            }
+            if ($value == 'pAvg') {
+                $output = '&pound;' . number_format(get_sub_field('pAvg'));
+            }
+            if ($value == 'delta') {
+                $output = get_sub_field('yoy_delta') . '%';
+            }
+        }
+    }
+    
+    return $output;
+}
+
+
 // black thumbnails - fix alpha channel
 /**
  * Patch to prevent black PDF backgrounds.
