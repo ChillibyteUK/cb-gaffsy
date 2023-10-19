@@ -274,7 +274,7 @@ function locdata ($atts){
                 $output = '&pound;' . number_format(get_sub_field('pAvg'));
             }
             if ($value == 'delta') {
-                $output = get_sub_field('yoy_delta') . '%';
+                $output = get_sub_field('yoy_delta') . '% ' . get_sub_field('direction');
             }
         }
     }
