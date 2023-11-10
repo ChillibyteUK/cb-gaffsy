@@ -132,7 +132,7 @@ do_action('wp_body_open');
                 <div class="topnav d-flex justify-content-end gap-4 mb-2">
                     <div class="d-none d-lg-flex phone-container">
                         <a href="tel:<?=parse_phone(get_field('contact_phone','options'))?>" class="nav-top__phone">
-                            <div><i class="fas fa-phone-alt"></i></div>
+                            <div><i class="fas fa-phone"></i></div>
                             <div class="nav-top__number"><?=get_field('contact_phone','options')?></span></div>
                         </a>
                     </div>
