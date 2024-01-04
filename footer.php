@@ -86,8 +86,7 @@ if ($social) {
     <div class="container py-2">
         <div class="d-flex flex-wrap justify-content-between">
             <div class="col-md-8 text-center text-md-start">
-                &copy; <?=date('Y')?> Sell House
-                Quick Now Ltd. T/A Gaffsy. Registered in England no 1240334
+                &copy; <?=date('Y')?> Gaffsy Ltd. Registered in England no 12403344
             </div>
             <div class="col-md-4 d-flex align-items-center justify-content-end flex-wrap gap-3">
                 <a href="/privacy-policy/">Privacy & Cookies</a> |
