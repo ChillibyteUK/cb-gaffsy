@@ -14,6 +14,7 @@
 .featured_slider__item img {
     aspect-ratio: 1;
     object-fit: contain;
+    object-position: center;
     width: 100%;
     max-width: 200px;
     display: block;
