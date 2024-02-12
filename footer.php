@@ -96,6 +96,9 @@ if ($social) {
         </div>
     </div>
 </div>
+<div class="sticky_floater">
+    <?=do_shortcode('[brb_collection id="3289"]')?>
+</div>
 <?php wp_footer();
 if (get_field('gtm_property', 'options')) {
     ?>
