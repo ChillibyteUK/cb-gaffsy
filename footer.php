@@ -96,7 +96,7 @@ if ($social) {
         </div>
     </div>
 </div>
-<div class="sticky_floater">
+<div class="d-none d-lg-block sticky_floater">
     <?=do_shortcode('[brb_collection id="3289"]')?>
 </div>
 <?php wp_footer();
