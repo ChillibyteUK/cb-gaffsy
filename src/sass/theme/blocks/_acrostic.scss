@@ -1,0 +1,16 @@
+.acrostic {
+    &__definition {
+        background-color: var(--col-grey);
+        padding: 1rem;
+        box-shadow: rgb(0 0 0 / 19%) 0 10px 20px, rgb(0 0 0 / 23%) 0 6px 6px;
+        border-radius: 0.5rem;
+        margin-inline: auto;
+        width: max-content;
+    }
+    h3 {
+        font-weight: 600;
+        &::first-letter {
+            color: var(--col-primary);
+        }
+    }
+}

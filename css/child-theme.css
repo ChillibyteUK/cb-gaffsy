@@ -22453,7 +22453,7 @@ h3, .h3 {
 }
 
 strong, b {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .text--white {
@@ -23666,6 +23666,49 @@ header.hero--short .hero_bg_img {
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
   border-radius: 1rem;
+}
+
+.pledge__left {
+  background-color: var(--col-dark);
+  color: var(--col-highlight);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+}
+.pledge__left img {
+  max-width: 250px;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+.pledge__right {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+}
+.pledge__right li {
+  margin-right: 0.5rem;
+}
+
+.acrostic__definition {
+  background-color: var(--col-grey);
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+  border-radius: 0.5rem;
+  margin-inline: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.acrostic h3, .acrostic .h3 {
+  font-weight: 600;
+}
+.acrostic h3::first-letter, .acrostic .h3::first-letter {
+  color: var(--col-primary);
 }
 
 .wp-block-quote--cb {
