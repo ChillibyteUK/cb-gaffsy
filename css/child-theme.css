@@ -23709,6 +23709,7 @@ header.hero--short .hero_bg_img {
 }
 .acrostic h3::first-letter, .acrostic .h3::first-letter {
   color: var(--col-primary);
+  font-size: 2rem;
 }
 
 .wp-block-quote--cb {

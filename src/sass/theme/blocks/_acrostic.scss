@@ -11,6 +11,7 @@
         font-weight: 600;
         &::first-letter {
             color: var(--col-primary);
+            font-size: 2rem;
         }
     }
 }
