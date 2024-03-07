@@ -148,7 +148,7 @@ do_action('wp_body_open');
         'theme_location'  => 'primary_nav',
         'container_class' => 'w-100',
         // 'container_id'    => 'primaryNav',
-        'menu_class'      => 'navbar-nav justify-content-between w-100 ps-md-5',
+        'menu_class'      => 'navbar-nav justify-content-lg-between w-100 ps-md-5',
         'fallback_cb'     => '',
         'menu_id'         => 'navbarr',
         'depth'           => 3,
