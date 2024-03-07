@@ -22537,6 +22537,9 @@ strong, b {
   font-size: 1.2rem;
   padding: 0 0.25rem;
 }
+#wrapper-navbar .navbar #navbar .dropdown-item {
+  padding: 0 0.25rem;
+}
 @media (max-width: 767px) {
   #wrapper-navbar .navbar #navbar {
     height: calc(100vh - var(--h-top));
