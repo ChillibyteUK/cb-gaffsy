@@ -22534,7 +22534,6 @@ strong, b {
   color: var(--col-highlight);
 }
 #wrapper-navbar .navbar #navbar a {
-  font-size: 1.2rem;
   padding: 0 0.25rem;
 }
 #wrapper-navbar .navbar #navbar .dropdown-item {
@@ -22548,6 +22547,7 @@ strong, b {
     height: 100%;
   }
   #wrapper-navbar .navbar #navbar a {
+    font-size: 1.2rem;
     padding: 0.25rem;
   }
   #wrapper-navbar .navbar #navbar .dropdown-item {
