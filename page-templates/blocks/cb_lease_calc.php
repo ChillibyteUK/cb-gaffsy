@@ -1,5 +1,5 @@
 <?php
-$classes = $classes['className'] ?? 'py-5';
+$classes = $block['className'] ?? 'py-5';
 ?>
 <section class="lease_calc <?=$classes?>">
     <div class="container-xl">
