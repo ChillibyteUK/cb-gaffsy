@@ -1,9 +1,7 @@
-<style>
-    .lease_calc label {
-        font-weight: bold;
-    }
-</style>
-<section class="lease_calc py-5 mt-5">
+<?php
+$classes = $classes['className'] ?? 'py-5';
+?>
+<section class="lease_calc <?=$classes?>">
     <div class="container-xl">
         <h2>Lease Extension Calculator</h2>
         <div class="row">
@@ -13,7 +11,7 @@
             <div class="col-lg-6">
                 <div class="row g-4 mb-4">
                     <div class="col-lg-5">
-                        <label for="term">Years left on lease</label>
+                        <label class="fw-bold" for="term">Years left on lease</label>
                     </div>
                     <div class="col-lg-7">
                         <div class="term_inner">
@@ -22,14 +20,14 @@
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <label for="rent">Ground Rent <small>(average)</small></label>
+                        <label class="fw-bold" for="rent">Ground Rent <small>(average)</small></label>
                     </div>
                     <div class="col-lg-7 d-flex align-items-center">
                         &pound;&nbsp;<input type="number" class="form-control w-75 me-1" name="rent" id="rent" min="0" value="75" style="width: auto;">
                         <small style="display:inline-block;white-space:nowrap;">per annum</small>
                     </div>
                     <div class="col-lg-5">
-                        <label for="rent">Property Value <small>(if extended)</small></label>
+                        <label class="fw-bold" for="rent">Property Value <small>(if extended)</small></label>
                     </div>
                     <div class="col-lg-7 d-flex align-items-center">
                         &pound;&nbsp;<input type="number" class="form-control" name="value" id="value" min=0 value=595000>
