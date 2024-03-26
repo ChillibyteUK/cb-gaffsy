@@ -10,6 +10,11 @@ $classes = $block['className'] ?? 'py-5';
     box-shadow: rgba(0,0,0,.19) 0 10px 20px, rgba(0,0,0,.23) 0 6px 6px;
     border-radius: 1rem;
 }
+@media (min-width:992px) {
+.calc_form small {
+    display: block;
+}
+}
 </style>
 <section class="lease_calc bg-grey--half <?=$classes?>">
     <div class="container-xl">
@@ -21,7 +26,7 @@ $classes = $block['className'] ?? 'py-5';
             <div class="col-lg-6">
                 <div class="calc_form">
                     <div class="row g-4 mb-4">
-                        <div class="col-lg-5">
+                        <div class="col-lg-5 align-content-center">
                             <label class="fw-bold" for="term">Years left on lease</label>
                         </div>
                         <div class="col-lg-7">
@@ -30,14 +35,14 @@ $classes = $block['className'] ?? 'py-5';
                                 <input type="range" id="term" class="form-range" min=5 max=125 value="70" name="term" onInput="document.getElementById('rangeval').innerText = document.getElementById('term').value">
                             </div>
                         </div>
-                        <div class="col-lg-5">
+                        <div class="col-lg-5 align-content-center">
                             <label class="fw-bold" for="rent">Ground Rent <small>(average)</small></label>
                         </div>
                         <div class="col-lg-7 d-flex align-items-center">
                             &pound;&nbsp;<input type="number" class="form-control w-75 me-1" name="rent" id="rent" min="0" value="75" style="width: auto;">
                             <small style="display:inline-block;white-space:nowrap;">per annum</small>
                         </div>
-                        <div class="col-lg-5">
+                        <div class="col-lg-5 align-content-center">
                             <label class="fw-bold" for="rent">Property Value <small>(if extended)</small></label>
                         </div>
                         <div class="col-lg-7 d-flex align-items-center">
